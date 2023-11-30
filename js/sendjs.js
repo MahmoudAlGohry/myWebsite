@@ -16,6 +16,9 @@ function sendMail() {
       document.getElementById("email").value = ""
       document.getElementById("message").value = ""
       const status = document.getElementById("status")
+      status.addEventListener("click", ()=>{
+        window.location.reload(false);
+      })
       status.innerHTML = "Message Sent!";
       status.style.color = "green";
       return;

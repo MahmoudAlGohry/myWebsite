@@ -18,8 +18,20 @@ function sendMail() {
       const status = document.getElementById("status")
       status.innerHTML = "Message Sent!";
       status.style.color = "green";
+      return;
+  
     }
-  );
+  ).catch((err)=>{
+    const status = document.getElementById("status")
+    status.innerHTML = "Something went wrong!";
+    status.style.color = "red";
+    return;
+ 
+  })
+
+  
+
+ 
 
  
 }

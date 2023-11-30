@@ -21,7 +21,7 @@ function sendMail() {
       });
       status.innerHTML = "Message Sent!";
       status.style.color = "green";
-      return;
+      return false;
     })
     .catch((err) => {
       const status = document.getElementById("status");
@@ -30,6 +30,6 @@ function sendMail() {
       });
       status.innerHTML = "Something went wrong!";
       status.style.color = "red";
-      return;
+      return false;
     });
 }

@@ -10,34 +10,26 @@ function sendMail() {
   const publicKey = "fZDs_hylQxBCFmHSG";
 
   emailjs
-  .send(serviceID, templateID, templateParams)
-  .then((res)=>{
-      document.getElementById("name").value = ""
-      document.getElementById("email").value = ""
-      document.getElementById("message").value = ""
-      const status = document.getElementById("status")
-      status.addEventListener("click", ()=>{
+    .send(serviceID, templateID, templateParams)
+    .then((res) => {
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("message").value = "";
+      const status = document.getElementById("status");
+      status.addEventListener("click", () => {
         window.location.reload(false);
-      })
+      });
       status.innerHTML = "Message Sent!";
       status.style.color = "green";
       return;
-  
-    }
-  ).catch((err)=>{
-    const status = document.getElementById("status")
-    status.addEventListener("click", ()=>{
-      window.location.reload(false);
     })
-    status.innerHTML = "Something went wrong!";
-    status.style.color = "red";
-    return;
- 
-  })
-
-  
-
- 
-
- 
+    .catch((err) => {
+      const status = document.getElementById("status");
+      status.addEventListener("click", () => {
+        window.location.reload(false);
+      });
+      status.innerHTML = "Something went wrong!";
+      status.style.color = "red";
+      return;
+    });
 }

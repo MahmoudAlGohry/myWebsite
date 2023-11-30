@@ -26,6 +26,9 @@ function sendMail() {
     }
   ).catch((err)=>{
     const status = document.getElementById("status")
+    status.addEventListener("click", ()=>{
+      window.location.reload(false);
+    })
     status.innerHTML = "Something went wrong!";
     status.style.color = "red";
     return;
